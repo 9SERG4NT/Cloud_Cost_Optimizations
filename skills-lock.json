@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "aws-cost-finops": {
+      "source": "ahmedasmar/devops-claude-skills",
+      "sourceType": "github",
+      "computedHash": "8ccb6fb7a85c0f02c01cb054f783f36a66bf73e2b96ebf856b77db96c6bbf26f"
+    }
+  }
+}

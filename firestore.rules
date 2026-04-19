@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection — each user can only access their own doc
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Chat sessions — accessible by the owning user
+    match /chat_sessions/{sessionId} {
+      allow read, write: if request.auth != null
+        && resource == null || resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null
+        && request.resource.data.userId == request.auth.uid;
+    }
+
+    // Saved reports — accessible by the owning user
+    match /saved_reports/{reportId} {
+      allow read, write: if request.auth != null
+        && resource == null || resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null
+        && request.resource.data.userId == request.auth.uid;
+    }
+  }
+}

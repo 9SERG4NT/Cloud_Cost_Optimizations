@@ -1,0 +1,36 @@
+# Environments
+.env
+.venv/
+.venv_new/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Node / Frontend
+node_modules/
+dist/
+stats.html
+
+# Credentials & Sensitive Data (CRITICAL)
+serviceAccountKey.json
+amar-swaroop-db-firebase-adminsdk-fbsvc-6da8e4b1ae.json
+*.p12
+*.pem
+
+# Firebase
+.firebase/
+firebase-debug.log*
+
+# Data & Scratch
+data/
+out.json
+out2.json
+out_e2e.json
+out3.txt
+out4.txt
+out5.txt
+
+# OS Files
+.DS_Store
+Thumbs.db
